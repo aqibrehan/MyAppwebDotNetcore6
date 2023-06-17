@@ -1,0 +1,12 @@
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\bin\Debug\net6.0\MyAppModels.deps.json
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\bin\Debug\net6.0\MyAppModels.dll
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\bin\Debug\net6.0\MyAppModels.pdb
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\obj\Debug\net6.0\MyAppModels.csproj.AssemblyReference.cache
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\obj\Debug\net6.0\MyAppModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\obj\Debug\net6.0\MyAppModels.AssemblyInfoInputs.cache
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\obj\Debug\net6.0\MyAppModels.AssemblyInfo.cs
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\obj\Debug\net6.0\MyAppModels.csproj.CoreCompileInputs.cache
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\obj\Debug\net6.0\MyAppModels.dll
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\obj\Debug\net6.0\refint\MyAppModels.dll
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\obj\Debug\net6.0\MyAppModels.pdb
+C:\Users\YOYO\source\repos\MyApp\MyAppModels\obj\Debug\net6.0\ref\MyAppModels.dll

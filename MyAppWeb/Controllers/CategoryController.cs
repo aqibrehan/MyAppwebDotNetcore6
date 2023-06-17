@@ -1,21 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyAppWeb.Data;
-using MyAppWeb.Models;
+using MyApp.DataAccessLayer.Data;
+using MyApp.DataAccessLayer.Infrastructure.IRepository;
+using MyApp.DataAccessLayer.Infrastructure.Repository;
+using MyApp.Models;
+
 
 namespace MyAppWeb.Controllers
 {
     public class CategoryController : Controller
     {
-        private ApplicationDbContext _context;
+        private IUnitofWork _unitofwork;
 
-        public CategoryController(ApplicationDbContext context)
+        public CategoryController(IUnitofWork UnitofWork)
         {
-            _context = context;
-        }
+            _unitofwork = UnitofWork;
+         }
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<Category> categories = _context.Categories;
+            IEnumerable<Category> categories = _unitofwork.Category.GetAll();
 
             return View(categories);
         }
@@ -31,8 +34,8 @@ namespace MyAppWeb.Controllers
         {
             if (ModelState.IsValid) 
             {
-                _context.Categories.Add(category);
-                _context.SaveChanges();
+                _unitofwork.Category.Add(category);
+                _unitofwork.save();
                 TempData["success"] = "Category Created Done!";
                 return RedirectToAction("Index");
             }
@@ -47,7 +50,7 @@ namespace MyAppWeb.Controllers
                 return NotFound();
             }
            
-            var category = _context.Categories.Find(id);
+            var category = _unitofwork.Category.GetT(x=>x.Id==id);
             if(category== null) 
             {
                 return NotFound();
@@ -60,8 +63,8 @@ namespace MyAppWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Categories.Update(category);
-                _context.SaveChanges();
+                _unitofwork.Category.Update(category);
+                _unitofwork.save();
                 TempData["success"] = "Category Updated Done!";
                 return RedirectToAction("Index");
             }
@@ -76,7 +79,7 @@ namespace MyAppWeb.Controllers
                 return NotFound();
             }
 
-            var category = _context.Categories.Find(id);
+            var category = _unitofwork.Category.GetT(x => x.Id == id);
             if (category == null)
             {
                 return NotFound();
@@ -87,13 +90,13 @@ namespace MyAppWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteData(int? id)
         {
-            var category = _context.Categories.Find(id);
+            var category = _unitofwork.Category.GetT(x => x.Id == id);
             if (category == null)
             {
                 return NotFound();
             }
-            _context.Categories.Remove(category);
-            _context.SaveChanges();
+            _unitofwork.Category.Delete(category);
+            _unitofwork.save();
             TempData["success"] = "Category Deleted Done!";
             return RedirectToAction("Index");
         }
