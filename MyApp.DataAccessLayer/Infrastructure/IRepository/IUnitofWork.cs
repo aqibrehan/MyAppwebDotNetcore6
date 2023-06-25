@@ -9,6 +9,7 @@ namespace MyApp.DataAccessLayer.Infrastructure.IRepository
     public interface IUnitofWork
     {
         ICategoryRepository Category { get; }
+        IProductRepository Product { get; }
         void save();
     }
 }
