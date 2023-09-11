@@ -19,6 +19,7 @@ namespace MyApp.DataAccessLayer.Infrastructure.Repository
         public Repository(ApplicationDbContext context)
         {
             _context = context;
+            //_context.Products.Includes(x=>x.Category)
             _dbSet=_context.Set<T>();
         }
 
@@ -40,14 +41,31 @@ namespace MyApp.DataAccessLayer.Infrastructure.Repository
 
        
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<T> GetAll(string? includeproperties=null )
         {
-            return _dbSet.ToList();
+            IQueryable<T> query = _dbSet;
+            if (includeproperties!=null)
+            {
+                foreach (var item in includeproperties.Split(new char[] {','},StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query= query.Include(item);
+                }
+            }
+            return query.ToList();
         }
 
-        public T GetT(Expression<Func<T, bool>> predicate)
+        public T GetT(Expression<Func<T, bool>> predicate, string? includeproperties = null)
         {
-            return _dbSet.Where(predicate).FirstOrDefault();
+            IQueryable<T> query=_dbSet;
+            query=query.Where(predicate);
+            if (includeproperties != null)
+            {
+                foreach (var item in includeproperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(item);
+                }
+            }
+            return query.FirstOrDefault();
         }
     }
 }

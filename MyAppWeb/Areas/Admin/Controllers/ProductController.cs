@@ -4,6 +4,8 @@ using MyApp.DataAccessLayer.Infrastructure.IRepository;
 using MyApp.DataAccessLayer.Infrastructure.Repository;
 using MyApp.Models;
 using MyApp.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Routing.Constraints;
 
 namespace MyAppWeb.Areas.Admin.Controllers
 {
@@ -11,19 +13,28 @@ namespace MyAppWeb.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private IUnitofWork _unitofwork;
-
-        public ProductController(IUnitofWork UnitofWork)
+        private IWebHostEnvironment _hostingEnvironment;
+        public ProductController(IUnitofWork UnitofWork, IWebHostEnvironment hostingEnvironment = null)
         {
             _unitofwork = UnitofWork;
+            _hostingEnvironment = hostingEnvironment;
         }
-        [HttpGet]
+        #region Apicall
+        public IActionResult AllProducts()
+        {
+             var Products = _unitofwork.Product.GetAll(includeproperties:"Category");
+
+            return Json(new {  data = Products });
+        }
+            #endregion
+            [HttpGet]
         public IActionResult Index()
         {
-            ProductVM productVM = new ProductVM();
+            //ProductVM productVM = new ProductVM();
 
-            productVM.Products = _unitofwork.Product.GetAll();
+            //productVM.Products = _unitofwork.Product.GetAll();
 
-            return View(productVM);
+            return View();
         }
 
         //[HttpGet]
@@ -48,15 +59,24 @@ namespace MyAppWeb.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult CreateUpdate(int? id)
         {
-            CategoryVM vm = new CategoryVM();
+            ProductVM vm = new ProductVM()
+            {
+                product = new(),
+                Categories = _unitofwork.Category.GetAll().Select(x =>
+                 new SelectListItem()
+                 {
+                     Text = x.Name,
+                     Value = x.Id.ToString()
+                 })
+            };
             if (id == null || id == 0)
             {
                 return View(vm);
             }
             else
             {
-                vm.category = _unitofwork.Category.GetT(x => x.Id == id);
-                if (vm.category == null)
+                vm.product = _unitofwork.Product.GetT(x => x.Id == id);
+                if (vm.product == null)
                 {
                     return NotFound();
                 }
@@ -69,21 +89,48 @@ namespace MyAppWeb.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateUpdate(CategoryVM VM)
+        public IActionResult CreateUpdate(ProductVM VM,IFormFile? file)
         {
             if (ModelState.IsValid)
             {
-                if(VM.category.Id==0)
+                string filename = string.Empty;
+                if (file!=null)
                 {
-                    _unitofwork.Category.Add(VM.category);
-                    TempData["success"] = "Category Created Done!";
+                    string uploadDir = Path.Combine(_hostingEnvironment.WebRootPath, "ProductImage");
+                     filename= Guid.NewGuid().ToString()+"-"+file.FileName;
+                    string  filePath = Path.Combine(uploadDir, filename);
+
+                    if(VM.product.ImageURl!=null)
+                    {
+                        var oldImagePath = Path.Combine(_hostingEnvironment.WebRootPath, VM.product.ImageURl.TrimStart('\\'));
+                        if(System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+
+
+                    using(var filestream = new FileStream(filePath,FileMode.Create))
+                    {
+                        file.CopyTo(filestream);
+                    }
+                    VM.product.ImageURl = @"/ProductImage/"+ filename;
+                   
+                }
+                if(VM.product.Id==0)
+                {
+                    _unitofwork.Product.Add(VM.product);
+                    TempData["success"] = "Product Created Done!";
                 }
                 else
                 {
-                    _unitofwork.Category.Update(VM.category);
-                    TempData["success"] = "Category Updated Done!";
+                    _unitofwork.Product.Update(VM.product);
+                    TempData["success"] = "Product Updated Done!";
                 }
-               
+                
+
+
                 _unitofwork.save();
              
                 return RedirectToAction("Index");
@@ -91,34 +138,46 @@ namespace MyAppWeb.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
+        //[HttpGet]
+        //public IActionResult Delete(int? id)
+        //{
+        //    if (id == null || id == 0)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var category = _unitofwork.Category.GetT(x => x.Id == id);
+        //    if (category == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(category);
+        //}
+
+        #region DeleteAPICALL
+
+        [HttpDelete]
+        
         public IActionResult Delete(int? id)
         {
-            if (id == null || id == 0)
+            var product = _unitofwork.Product.GetT(x => x.Id == id);
+            if (product == null)
             {
-                return NotFound();
+                return Json(new {success=false,message="Error in Fetch Data"});
             }
-
-            var category = _unitofwork.Category.GetT(x => x.Id == id);
-            if (category == null)
+            else
             {
-                return NotFound();
-            }
-            return View(category);
+                var oldImagePath = Path.Combine(_hostingEnvironment.WebRootPath, product.ImageURl.TrimStart('\\'));
+                if (System.IO.File.Exists(oldImagePath))
+                {
+                    System.IO.File.Delete(oldImagePath);                   
+                }
+                _unitofwork.Product.Delete(product);
+                _unitofwork.save();
+                TempData["success"] = "Product Deleted Done!";
+                return Json(new { success = true, message = "Product Deleted Done!" });
+            }  
         }
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public IActionResult DeleteData(int? id)
-        {
-            var category = _unitofwork.Category.GetT(x => x.Id == id);
-            if (category == null)
-            {
-                return NotFound();
-            }
-            _unitofwork.Category.Delete(category);
-            _unitofwork.save();
-            TempData["success"] = "Category Deleted Done!";
-            return RedirectToAction("Index");
-        }
+        #endregion
     }
 }

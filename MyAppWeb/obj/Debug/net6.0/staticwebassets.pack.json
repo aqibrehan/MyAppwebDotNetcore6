@@ -5,6 +5,50 @@
       "PackagePath": "staticwebassets\\MyAppWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\ProductImage\\01482539-0c1b-4af8-8971-546610e55fa8-download (1).jfif",
+      "PackagePath": "staticwebassets\\ProductImage\\01482539-0c1b-4af8-8971-546610e55fa8-download (1).jfif"
+    },
+    {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\ProductImage\\2013df73-c8cd-42be-a07a-8342ca8d1c32-31306531-red-car.webp",
+      "PackagePath": "staticwebassets\\ProductImage\\2013df73-c8cd-42be-a07a-8342ca8d1c32-31306531-red-car.webp"
+    },
+    {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\ProductImage\\61a2c666-6f38-43df-b002-44d5e351e028-RedCar.png",
+      "PackagePath": "staticwebassets\\ProductImage\\61a2c666-6f38-43df-b002-44d5e351e028-RedCar.png"
+    },
+    {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\ProductImage\\652ac12d-4182-4dc5-ac9c-ff970f9c32ce-pexels-pixabay-76971.jpg",
+      "PackagePath": "staticwebassets\\ProductImage\\652ac12d-4182-4dc5-ac9c-ff970f9c32ce-pexels-pixabay-76971.jpg"
+    },
+    {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\ProductImage\\6c464742-2df2-47bc-a44f-0721c3ec322b-RedCar.png",
+      "PackagePath": "staticwebassets\\ProductImage\\6c464742-2df2-47bc-a44f-0721c3ec322b-RedCar.png"
+    },
+    {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\ProductImage\\7415719a-f2ca-47dc-8bf2-d317264e8259-RedCar.png",
+      "PackagePath": "staticwebassets\\ProductImage\\7415719a-f2ca-47dc-8bf2-d317264e8259-RedCar.png"
+    },
+    {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\ProductImage\\c18ec9c5-455d-4fd2-a81a-3382ec671be3-RedCar.png",
+      "PackagePath": "staticwebassets\\ProductImage\\c18ec9c5-455d-4fd2-a81a-3382ec671be3-RedCar.png"
+    },
+    {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\ProductImage\\c2c6fff9-762a-4491-88f0-2399905564d6-RedCar.png",
+      "PackagePath": "staticwebassets\\ProductImage\\c2c6fff9-762a-4491-88f0-2399905564d6-RedCar.png"
+    },
+    {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\ProductImage\\c953b823-79c8-4002-9859-89666d1ded37-31306531-red-car.webp",
+      "PackagePath": "staticwebassets\\ProductImage\\c953b823-79c8-4002-9859-89666d1ded37-31306531-red-car.webp"
+    },
+    {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\ProductImage\\f1296797-4326-4025-ba34-8b2d1d80f132-RedCar.png",
+      "PackagePath": "staticwebassets\\ProductImage\\f1296797-4326-4025-ba34-8b2d1d80f132-RedCar.png"
+    },
+    {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\ProductImage\\f8f8dc1f-cb58-48a8-b1b5-dbe50d13bc5c-RedCar.png",
+      "PackagePath": "staticwebassets\\ProductImage\\f8f8dc1f-cb58-48a8-b1b5-dbe50d13bc5c-RedCar.png"
+    },
+    {
       "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\css\\SuperheroboostwatchTheme.css",
       "PackagePath": "staticwebassets\\css\\SuperheroboostwatchTheme.css"
     },
@@ -15,6 +59,10 @@
     {
       "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\js\\Products.js",
+      "PackagePath": "staticwebassets\\js\\Products.js"
     },
     {
       "Id": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\wwwroot\\js\\site.js",
