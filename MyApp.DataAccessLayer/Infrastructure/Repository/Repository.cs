@@ -41,9 +41,13 @@ namespace MyApp.DataAccessLayer.Infrastructure.Repository
 
        
 
-        public IEnumerable<T> GetAll(string? includeproperties=null )
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>>? predicate=null, string? includeproperties=null )
         {
             IQueryable<T> query = _dbSet;
+            if(predicate!=null)
+            {
+                query = query.Where(predicate);
+            }
             if (includeproperties!=null)
             {
                 foreach (var item in includeproperties.Split(new char[] {','},StringSplitOptions.RemoveEmptyEntries))

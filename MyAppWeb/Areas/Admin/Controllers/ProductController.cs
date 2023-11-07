@@ -6,10 +6,13 @@ using MyApp.Models;
 using MyApp.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Routing.Constraints;
+using Microsoft.AspNetCore.Authorization;
+using MyApp.CommonHelper;
 
 namespace MyAppWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class ProductController : Controller
     {
         private IUnitofWork _unitofwork;
@@ -131,7 +134,7 @@ namespace MyAppWeb.Areas.Admin.Controllers
                 
 
 
-                _unitofwork.save();
+                _unitofwork.Save();
              
                 return RedirectToAction("Index");
             }
@@ -173,7 +176,7 @@ namespace MyAppWeb.Areas.Admin.Controllers
                     System.IO.File.Delete(oldImagePath);                   
                 }
                 _unitofwork.Product.Delete(product);
-                _unitofwork.save();
+                _unitofwork.Save();
                 TempData["success"] = "Product Deleted Done!";
                 return Json(new { success = true, message = "Product Deleted Done!" });
             }  

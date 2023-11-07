@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyApp.DataAccessLayer.Infrastructure.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,10 @@ namespace MyApp.DataAccessLayer.Infrastructure.IRepository
     {
         ICategoryRepository Category { get; }
         IProductRepository Product { get; }
-        void save();
+        ICartRepository Cart { get; }
+        IApplicationUser ApplicationUser { get; }
+        IOrderHeaderRepository OrderHeader { get; }
+        IOrderDetailRepository OrderDetail { get; }
+        void Save();
     }
 }

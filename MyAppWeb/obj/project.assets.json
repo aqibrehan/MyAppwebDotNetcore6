@@ -1129,6 +1129,43 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Mvc.Razor.Extensions/6.0.21": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor.Language": "6.0.21",
+          "Microsoft.CodeAnalysis.Razor": "6.0.21"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/6.0.21": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "6.0.21",
+          "Microsoft.CodeAnalysis.Razor": "6.0.21",
+          "Microsoft.Extensions.DependencyModel": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "buildTransitive/net6.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets": {}
+        }
+      },
       "Microsoft.AspNetCore.Mvc.ViewFeatures/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -1152,7 +1189,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Razor.Language/6.0.0": {
+      "Microsoft.AspNetCore.Razor.Language/6.0.21": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
@@ -1608,10 +1645,10 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.Razor/6.0.0": {
+      "Microsoft.CodeAnalysis.Razor/6.0.21": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Razor.Language": "6.0.0",
+          "Microsoft.AspNetCore.Razor.Language": "6.0.21",
           "Microsoft.CodeAnalysis.CSharp": "4.0.0",
           "Microsoft.CodeAnalysis.Common": "4.0.0"
         },
@@ -3077,6 +3114,23 @@
           "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so": {
             "assetType": "native",
             "rid": "ubuntu.16.10-x64"
+          }
+        }
+      },
+      "Stripe.net/43.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "System.Configuration.ConfigurationManager": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Stripe.net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Stripe.net.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -4684,7 +4738,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.UI": "6.0.21"
+          "Microsoft.AspNetCore.Identity.UI": "6.0.21",
+          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.21"
         },
         "compile": {
           "bin/placeholder/MyApp.CommonHelper.dll": {}
@@ -4698,10 +4753,12 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.21",
+          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.21",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
           "Microsoft.EntityFrameworkCore": "7.0.5",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5",
+          "MyApp.CommonHelper": "1.0.0",
           "MyApp.Models": "1.0.0"
         },
         "compile": {
@@ -4717,6 +4774,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.21",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
+          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.21",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0"
         },
         "compile": {
@@ -6014,6 +6072,37 @@
         "microsoft.aspnetcore.mvc.formatters.json.nuspec"
       ]
     },
+    "Microsoft.AspNetCore.Mvc.Razor.Extensions/6.0.21": {
+      "sha512": "6nj7bR3UCmsoPp05kMiU6qV94mF8bJzIke1RVWRQS8kelTY+dLch42PCui83Bbivvq4yCv8+ZZ/WYiUniXrcig==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.razor.extensions/6.0.21",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll",
+        "microsoft.aspnetcore.mvc.razor.extensions.6.0.21.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.razor.extensions.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/6.0.21": {
+      "sha512": "s7jS/MyLna2YKoU5+vOz5SNH9qUIc9pqKuNL0K02E6dZEK1/QRYc9NAWg8dIKCPs2zZrr/cS+o6EjydbVSAFHw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.razor.runtimecompilation/6.0.21",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/net6.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets",
+        "buildTransitive/net6.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets",
+        "lib/net6.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.xml",
+        "microsoft.aspnetcore.mvc.razor.runtimecompilation.6.0.21.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.razor.runtimecompilation.nuspec"
+      ]
+    },
     "Microsoft.AspNetCore.Mvc.ViewFeatures/2.2.0": {
       "sha512": "dt7MGkzCFVTAD5oesI8UeVVeiSgaZ0tPdFstQjG6YLJSCiq1koOUSHMpf0PASGdOW/H9hxXkolIBhT5dWqJi7g==",
       "type": "package",
@@ -6027,17 +6116,17 @@
         "microsoft.aspnetcore.mvc.viewfeatures.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Razor.Language/6.0.0": {
-      "sha512": "yCtBr1GSGzJrrp1NJUb4ltwFYMKHw/tJLnIDvg9g/FnkGIEzmE19tbCQqXARIJv5kdtBgsoVIdGLL+zmjxvM/A==",
+    "Microsoft.AspNetCore.Razor.Language/6.0.21": {
+      "sha512": "cQiuw887Hbhn+HdFUHojY4pEL016gw2+8C9wekqNEC4p6SBRp/nyjW4Pz2RNm0vbIWkUkl3WjtnFh44OBcxVZg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.razor.language/6.0.0",
+      "path": "microsoft.aspnetcore.razor.language/6.0.21",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll",
-        "microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.razor.language.6.0.21.nupkg.sha512",
         "microsoft.aspnetcore.razor.language.nuspec"
       ]
     },
@@ -6520,17 +6609,17 @@
         "microsoft.codeanalysis.features.nuspec"
       ]
     },
-    "Microsoft.CodeAnalysis.Razor/6.0.0": {
-      "sha512": "uqdzuQXxD7XrJCbIbbwpI/LOv0PBJ9VIR0gdvANTHOfK5pjTaCir+XcwvYvBZ5BIzd0KGzyiamzlEWw1cK1q0w==",
+    "Microsoft.CodeAnalysis.Razor/6.0.21": {
+      "sha512": "bBjY2tvIcQBakcrtrHyYU2mijC4uf0nPYkVisfg8nnX1rN0GYKgiDgE7EBxfX2hb6Hs64p/v6EPSHX0rC1ZhJg==",
       "type": "package",
-      "path": "microsoft.codeanalysis.razor/6.0.0",
+      "path": "microsoft.codeanalysis.razor/6.0.21",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll",
-        "microsoft.codeanalysis.razor.6.0.0.nupkg.sha512",
+        "microsoft.codeanalysis.razor.6.0.21.nupkg.sha512",
         "microsoft.codeanalysis.razor.nuspec"
       ]
     },
@@ -8765,6 +8854,29 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "Stripe.net/43.0.0": {
+      "sha512": "Kdv2B5dWagOZlDrGQjN3yDJW2anZl0QWgenpmUPoOeOXOVRvw+jpwefvHqWw6AoGQ+WcaNdFYF+5nxcZ1mR7EA==",
+      "type": "package",
+      "path": "stripe.net/43.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net461/Stripe.net.dll",
+        "lib/net461/Stripe.net.xml",
+        "lib/net5.0/Stripe.net.dll",
+        "lib/net5.0/Stripe.net.xml",
+        "lib/net6.0/Stripe.net.dll",
+        "lib/net6.0/Stripe.net.xml",
+        "lib/netcoreapp3.1/Stripe.net.dll",
+        "lib/netcoreapp3.1/Stripe.net.xml",
+        "lib/netstandard2.0/Stripe.net.dll",
+        "lib/netstandard2.0/Stripe.net.xml",
+        "stripe.net.43.0.0.nupkg.sha512",
+        "stripe.net.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -12860,6 +12972,7 @@
       "Castle.Core >= 5.1.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.21",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.21",
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.21",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 7.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.5",
@@ -12867,49 +12980,54 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
       "MyApp.CommonHelper >= 1.0.0",
       "MyApp.DataAccessLayer >= 1.0.0",
-      "MyApp.Models >= 1.0.0"
+      "MyApp.Models >= 1.0.0",
+      "Stripe.net >= 43.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\YOYO\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Muhammad Ali\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\MyAppWeb.csproj",
+      "projectUniqueName": "C:\\Users\\Muhammad Ali\\source\\repos\\aqibrehan\\MyAppwebDotNetcore6\\MyAppWeb\\MyAppWeb.csproj",
       "projectName": "MyAppWeb",
-      "projectPath": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\MyAppWeb.csproj",
-      "packagesPath": "C:\\Users\\YOYO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyAppWeb\\obj\\",
+      "projectPath": "C:\\Users\\Muhammad Ali\\source\\repos\\aqibrehan\\MyAppwebDotNetcore6\\MyAppWeb\\MyAppWeb.csproj",
+      "packagesPath": "C:\\Users\\Muhammad Ali\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Muhammad Ali\\source\\repos\\aqibrehan\\MyAppwebDotNetcore6\\MyAppWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\YOYO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Muhammad Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyApp.CommonHelper\\MyApp.CommonHelper.csproj": {
-              "projectPath": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyApp.CommonHelper\\MyApp.CommonHelper.csproj"
+            "C:\\Users\\Muhammad Ali\\source\\repos\\aqibrehan\\MyAppwebDotNetcore6\\MyApp.CommonHelper\\MyApp.CommonHelper.csproj": {
+              "projectPath": "C:\\Users\\Muhammad Ali\\source\\repos\\aqibrehan\\MyAppwebDotNetcore6\\MyApp.CommonHelper\\MyApp.CommonHelper.csproj"
             },
-            "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyApp.DataAccessLayer\\MyApp.DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyApp.DataAccessLayer\\MyApp.DataAccessLayer.csproj"
+            "C:\\Users\\Muhammad Ali\\source\\repos\\aqibrehan\\MyAppwebDotNetcore6\\MyApp.DataAccessLayer\\MyApp.DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\Muhammad Ali\\source\\repos\\aqibrehan\\MyAppwebDotNetcore6\\MyApp.DataAccessLayer\\MyApp.DataAccessLayer.csproj"
             },
-            "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyApp.Models\\MyApp.Models.csproj": {
-              "projectPath": "C:\\Users\\YOYO\\source\\repos\\MyApp\\MyApp.Models\\MyApp.Models.csproj"
+            "C:\\Users\\Muhammad Ali\\source\\repos\\aqibrehan\\MyAppwebDotNetcore6\\MyApp.Models\\MyApp.Models.csproj": {
+              "projectPath": "C:\\Users\\Muhammad Ali\\source\\repos\\aqibrehan\\MyAppwebDotNetcore6\\MyApp.Models\\MyApp.Models.csproj"
             }
           }
         }
@@ -12936,6 +13054,10 @@
             "target": "Package",
             "version": "[6.0.21, )"
           },
+          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+            "target": "Package",
+            "version": "[6.0.21, )"
+          },
           "Microsoft.AspNetCore.Mvc.ViewFeatures": {
             "target": "Package",
             "version": "[2.2.0, )"
@@ -12957,6 +13079,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[6.0.16, )"
+          },
+          "Stripe.net": {
+            "target": "Package",
+            "version": "[43.0.0, )"
           }
         },
         "imports": [
@@ -12970,6 +13096,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.24, 6.0.24]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.24, 6.0.24]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.24, 6.0.24]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.24, 6.0.24]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -12978,7 +13122,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

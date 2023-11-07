@@ -1,0 +1,80 @@
+﻿@using System.Globalization;
+@model MyApp.Models.ViewModels.CartVM
+
+
+<section class="h-100 h-custom" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body p-4">
+
+                        <div class="row">
+
+                            <div class="col-lg-12">
+                                <h5 class="mb-3">
+                                    <a href="#!" class="text-body">
+                                        <i class="fas fa-long-arrow-alt-left me-2"></i> Shopping Cart
+                                    </a>
+                                </h5>
+                                <hr>
+
+                                @foreach(var item in Model.ListofCart)
+                                {
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                         
+                                                <div class="row main align-items-center">
+                                                    <div class="col"><img class="img-fluid" src="@item.Product.ImageURl" width="150" height="150"></div>
+                                                    <div class="col">
+                                                        <div class="row text-muted">@item.Product.Name</div>
+                                                        <div class="row">@Html.Raw(@item.Product.Description)</div>
+                                                    </div>
+                                                
+                                                    <div class="col">
+                                                        <a asp-action="plus" asp-route-id="@item.Id" class="btn btn-link px-2" >
+                                                            <i class="bi bi-node-plus-fill"></i>
+                                                        </a>
+                                                        <a href="#" class="border">@item.Count</a>
+                                                        <a asp-action="minus" asp-route-id="@item.Id" class="btn btn-link px-2">
+                                                            <i class="bi bi-node-minus-fill"></i>
+                                                        </a>
+                                                 
+                                                    <div class="col"> @item.Product.Price </div>
+                                                    <a asp-action="delete" asp-route-id="@item.Id" class="btn btn-link px-2">
+                                                        <i class="bi bi-trash-fill"></i>
+                                                    </a>
+                                                    </div>
+                                                   
+                                                </div>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+
+                             }
+
+                            </div>
+                     
+
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-body p-4 d-flex flex-row">
+                                <div class="form-outline flex-fill">
+                                    <h3>Total: @Model.orderHeader.OrderTotal.ToString("C", CultureInfo.CreateSpecificCulture("ur-PK"))</h3>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="card">
+          <div class="card-body p-4 d-flex flex-row">
+              <a asp-action="Summary" class="btn btn-warning btn-block btn-lg ms-3">Process to Pay</a>
+              </div>
+    </div>
+    </div>
+</section>

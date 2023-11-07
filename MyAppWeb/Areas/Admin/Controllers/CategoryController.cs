@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using MyApp.CommonHelper;
 using MyApp.DataAccessLayer.Data;
 using MyApp.DataAccessLayer.Infrastructure.IRepository;
 using MyApp.DataAccessLayer.Infrastructure.Repository;
@@ -8,6 +10,7 @@ using MyApp.Models.ViewModels;
 namespace MyAppWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles =WebSiteRole.Role_Admin)]
     public class CategoryController : Controller
     {
         private IUnitofWork _unitofwork;
@@ -84,7 +87,7 @@ namespace MyAppWeb.Areas.Admin.Controllers
                     TempData["success"] = "Category Updated Done!";
                 }
                
-                _unitofwork.save();
+                _unitofwork.Save();
              
                 return RedirectToAction("Index");
             }
@@ -116,7 +119,7 @@ namespace MyAppWeb.Areas.Admin.Controllers
                 return NotFound();
             }
             _unitofwork.Category.Delete(category);
-            _unitofwork.save();
+            _unitofwork.Save();
             TempData["success"] = "Category Deleted Done!";
             return RedirectToAction("Index");
         }

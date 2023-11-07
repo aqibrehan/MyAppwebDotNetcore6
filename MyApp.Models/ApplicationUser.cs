@@ -21,7 +21,7 @@ namespace MyApp.Models
         public string? State { get; set; }
         
         public string? PinCode { get; set; }
-        
+
 
     }
 }
