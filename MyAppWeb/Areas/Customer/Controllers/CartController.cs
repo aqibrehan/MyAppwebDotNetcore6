@@ -183,12 +183,14 @@ namespace MyAppWeb.Areas.Customer.Controllers
         }
         public IActionResult minus(int id)
         {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
             var cart = _unitofwork.Cart.GetT(x => x.Id == id);
             if(cart.Count<=1)
             {
                 _unitofwork.Cart.Delete(cart);
               
-       
+            
             }
             else
             {
@@ -196,16 +198,22 @@ namespace MyAppWeb.Areas.Customer.Controllers
             }
            
             _unitofwork.Save();
+            var count = _unitofwork.Cart.GetAll(x => x.ApplicationUserId == cart.ApplicationUserId).ToList().Count;
+            HttpContext.Session.SetInt32("SessionCart", count);
             return RedirectToAction(nameof(Index));
         }
 
         public IActionResult delete(int id)
         {
+            
             var cart = _unitofwork.Cart.GetT(x => x.Id == id);
            
-            _unitofwork.Cart.Delete(cart);           
+            _unitofwork.Cart.Delete(cart);         
 
             _unitofwork.Save();
+            var count = _unitofwork.Cart.GetAll(x => x.ApplicationUserId == cart.ApplicationUserId).ToList().Count;
+            HttpContext.Session.SetInt32("SessionCart", count);
+         
             return RedirectToAction(nameof(Index));
         }
     }

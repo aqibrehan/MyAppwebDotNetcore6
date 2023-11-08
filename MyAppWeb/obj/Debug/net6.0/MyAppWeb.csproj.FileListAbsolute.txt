@@ -724,7 +724,6 @@ C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\De
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Drawing.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Drawing.Primitives.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Dynamic.Runtime.dll
-C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Formats.Asn1.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Globalization.Calendars.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Globalization.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Globalization.Extensions.dll
@@ -813,7 +812,6 @@ C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\De
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Security.SecureString.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.ServiceModel.Web.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.ServiceProcess.dll
-C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Text.Encoding.CodePages.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Text.Encoding.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Text.Encoding.Extensions.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\refs\System.Text.RegularExpressions.dll
@@ -846,3 +844,11 @@ C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\De
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\Stripe.net.dll
+C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\MailKit.dll
+C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\MimeKit.dll
+C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyAppWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.DataAccessLayer.Infrastructure.IRepository;
 
@@ -59,13 +60,16 @@ namespace MyAppWeb.Areas.Customer.Controllers
                 if (cartItem == null)
                 {
                     _unitofwork.Cart.Add(cart);
+                    _unitofwork.Save();
+                    HttpContext.Session.SetInt32("SessionCart", _unitofwork.Cart.GetAll(x => x.ApplicationUserId == claim.Value).ToList().Count);
                 
                 }
                 else
                 {
                     _unitofwork.Cart.IncrementCartItem(cartItem,cart.Count);
+                    _unitofwork.Save();
                 }
-                _unitofwork.Save();
+          
 
 
             }

@@ -186,7 +186,6 @@ C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAcces
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Drawing.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Drawing.Primitives.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Dynamic.Runtime.dll
-C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Formats.Asn1.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Globalization.Calendars.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Globalization.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Globalization.Extensions.dll
@@ -275,7 +274,6 @@ C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAcces
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Security.SecureString.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.ServiceModel.Web.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.ServiceProcess.dll
-C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Text.Encoding.CodePages.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Text.Encoding.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Text.Encoding.Extensions.dll
 C:\Users\Muhammad Ali\source\repos\aqibrehan\MyAppwebDotNetcore6\MyApp.DataAccessLayer\bin\Debug\net6.0\refs\System.Text.Encodings.Web.dll

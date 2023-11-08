@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -33,10 +35,28 @@
                         <li class="nav-item">
                             <a class="nav-link " asp-area="Admin" asp-controller="Order" asp-action="Index">Order</a>
                         </li>
-         <li class="nav-item">
-                            <a class="nav-link " asp-area="Customer" asp-controller="Cart" asp-action="Index"><i class="bi bi-cart"></i></a>
-                        </li>
-      </ul>
+                     @*   @if (httpContext.HttpContext.Session.GetInt32("SessionCart") != null)
+                        {
+                            <li class="nav-item">
+
+                                <a class="nav-link " asp-area="Customer" asp-controller="Cart" asp-action="Index"><i class="bi bi-cart"></i>
+                                    (@httpContext.HttpContext.Session.GetInt32("SessionCart"))
+                                </a>
+
+                            </li>
+                        }
+                        else
+                        {*@
+                             <li class="nav-item">
+
+                                <a class="nav-link " asp-area="Customer" asp-controller="Cart" asp-action="Index">
+
+                                    @await Component.InvokeAsync("Cart")
+                                </a>
+
+                            </li>
+                        @*}*@
+                    </ul>
       <partial name="_LoginPartial"/>
     </div>
   </div>
